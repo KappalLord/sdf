@@ -7,7 +7,6 @@ before_install:
 addons:
   sonarcloud:
     organization: "kappallord"
-    script:
     
 script:
   - qmake
@@ -19,7 +18,7 @@ after_success:
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
   - sonar-scanner
  
-  cache:
+cache:
   directories:
   - '$HOME/.m2/repository'
   - '$HOME/.sonar/cache'
